@@ -1,3 +1,9 @@
+## 실행 환경
+
+- **Server:** express
+- **DataBase:** postgres
+- **ORM:** prisma
+
 ## 실행 방법
 
 ### 1. '.env' 파일 작성
