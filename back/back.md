@@ -47,14 +47,14 @@
 
   - 응답: 선택한 프로젝트의 정보와 해당 프로젝트에 속한 태스크 목록
 
-- **DELETE /projects/:projectId**: 특정 프로젝트 삭제
+- **DELETE /projects/:projectId**: 특정 프로젝트 삭제 | 단, 태스크가 존재할 경우 삭제 불가 처리(응답 메시지 반환)
   - 응답: 삭제 성공 여부 메시지
 
 ### 태스크 API
 
 - **POST /projects/:projectId/tasks**: 프로젝트에 태스크 추가
 
-  - 요청: `{ "title": "태스크 제목", "description": "태스크 설명", "priority": "high", "dueDate": "2024-11-10" }`
+  - 요청: `{ "pjId": 1, "title": "태스크 제목", "description": "태스크 설명", "priority": "high", "dueDate": "2024-11-10" }`
   - 응답: 생성된 태스크의 ID와 기본 정보
 
 - **GET /projects/:projectId/tasks**: 특정 프로젝트의 모든 태스크 조회
@@ -88,6 +88,7 @@
 
 ```json
 {
+  "pjId": 1, // project id
   "id": "1",
   "title": "태스크 제목",
   "description": "태스크 설명",
